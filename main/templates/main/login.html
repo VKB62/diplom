@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="Submit" name="submit" value="Authorization" />
+        </form>
+
+        {% if submitbutton == "Authorization" %}
+
+        <h1>{{ passw }}</h1>
+        {% if passw == "Успешная авторизация" %}
+        <a href="{% url 'vote' %}"><input type="Submit" name="submit" value="Go"/></a>
+        {% endif %}
+        {% endif %}
+
+    </body>
+</html>
+
+
+
